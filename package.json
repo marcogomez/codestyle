@@ -1,0 +1,69 @@
+{
+  "name": "@mgz-dev/codestyle",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Shared ESLint, Prettier, and TypeScript configuration.",
+  "license": "MIT",
+  "author": {
+    "name": "Marco Gomez",
+    "email": "me@mgz.me",
+    "url": "https://mgz.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcogomez/codestyle.git"
+  },
+  "bin": {
+    "codestyle": "./bin/codestyle.mjs"
+  },
+  "files": [
+    "eslint.config.mjs",
+    "prettier.config.mjs",
+    "prettier.config.cjs",
+    "tsconfig",
+    "bin",
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "import": "./eslint.config.mjs"
+    },
+    "./prettier": {
+      "import": "./prettier.config.mjs",
+      "require": "./prettier.config.cjs"
+    },
+    "./tsconfig/base.json": "./tsconfig/base.json"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.4",
+    "@typescript-eslint/eslint-plugin": "^8.60.1",
+    "@typescript-eslint/parser": "^8.60.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.15.2",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.6.0",
+    "typescript-eslint": "^8.60.1"
+  },
+  "scripts": {
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.4",
+    "vitest": "^4.0.18"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
+  }
+}
