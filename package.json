@@ -59,8 +59,7 @@
   },
   "packageManager": "pnpm@10.28.2",
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "peerDependencies": {
     "eslint": "^9.0.0",
